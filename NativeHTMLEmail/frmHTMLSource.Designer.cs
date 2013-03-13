@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHTMLSource));
-            this.txtHTMLSource = new System.Windows.Forms.TextBox();
+            this.txtHTMLSource = new ICSharpCode.TextEditor.TextEditorControl();
             this.SuspendLayout();
             // 
             // txtHTMLSource
             // 
             this.txtHTMLSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHTMLSource.IsReadOnly = false;
             this.txtHTMLSource.Location = new System.Drawing.Point(0, 0);
-            this.txtHTMLSource.Multiline = true;
             this.txtHTMLSource.Name = "txtHTMLSource";
-            this.txtHTMLSource.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtHTMLSource.Size = new System.Drawing.Size(501, 509);
-            this.txtHTMLSource.TabIndex = 0;
+            this.txtHTMLSource.TabIndex = 1;
             // 
             // frmHTMLSource
             // 
@@ -53,13 +52,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHTMLSource_FormClosed);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        public System.Windows.Forms.TextBox txtHTMLSource;
+        public ICSharpCode.TextEditor.TextEditorControl txtHTMLSource;
+
+
 
 
     }

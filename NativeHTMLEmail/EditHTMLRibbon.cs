@@ -18,8 +18,7 @@ namespace NativeHTMLEmail
         private void btnImportHTML_Click(object sender, RibbonControlEventArgs e)
         {
             // Get inspector
-            Microsoft.Office.Interop.Outlook.Inspector currentInspector =
-    this.Context as Microsoft.Office.Interop.Outlook.Inspector;
+            Microsoft.Office.Interop.Outlook.Inspector currentInspector = this.Context as Microsoft.Office.Interop.Outlook.Inspector;
             
             // If inspector hasn't been initialized
             if (currentInspector == null)
@@ -67,9 +66,17 @@ namespace NativeHTMLEmail
                 dialog.Context = currentInspector;
                 // Set title as an email subject
                 dialog.Text = currentMailItem.Subject;
-                // Copy HTML body from current email item
-                dialog.txtHTMLSource.Text = currentMailItem.HTMLBody;
-                dialog.ShowDialog();
+                try
+                {
+                    // Set up highlight formatting as HTML
+                    dialog.txtHTMLSource.SetHighlighting("HTML");
+                    // Copy HTML body from current email item
+                    dialog.txtHTMLSource.Text = currentMailItem.HTMLBody;
+                }
+                finally
+                {
+                    dialog.ShowDialog();
+                }
             }
         }
 
