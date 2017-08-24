@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTMLEditorForOutlook", "HTMLEditorForOutlook\HTMLEditorForOutlook.csproj", "{A97B5470-F013-4C59-B942-849E674A5C45}"
 EndProject
 Global
