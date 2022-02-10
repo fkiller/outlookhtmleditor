@@ -37,6 +37,11 @@ namespace HTMLEditorForOutlook
 
         private void frmHTMLSource_FormClosed(object sender, FormClosedEventArgs e)
         {
+            RefreshHtml();
+        }
+
+        private void RefreshHtml()
+        {
             // Get inspector
             Microsoft.Office.Interop.Outlook.Inspector currentInspector = this.Context as Microsoft.Office.Interop.Outlook.Inspector;
 
@@ -54,6 +59,24 @@ namespace HTMLEditorForOutlook
             {
                 // Copy HTML code back to mail item
                 currentMailItem.HTMLBody = txtHTMLSource.Text;
+            }
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            RefreshHtml();
+        }
+
+        private void liveRefreshCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHTMLSource_TextChanged(object sender, EventArgs e)
+        {
+            if (liveRefreshCheckBox.Checked)
+            {
+                RefreshHtml();
             }
         }
     }
