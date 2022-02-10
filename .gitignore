@@ -2,3 +2,7 @@
 /HTMLEditorForOutlook/obj/
 /HTMLEditorForOutlook/publish/
 /.vs
+/*.suo
+*.suo
+*.user
+*.pfx
